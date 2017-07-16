@@ -14,6 +14,8 @@ Vagrant.configure("2") do |config|
     # config.vm.synced_folder "../vagrant/scotch-box/conf", "/etc/apache2/sites-enabled", :mount_options => ["dmode=755", "fmode=644"]
     # config.vm.synced_folder "../vagrant/scotch-box/sites", "/var/www/html", :nfs => true, owner: "www-data", group: "www-data"
     # config.vm.synced_folder "../vagrant/scotch-box/conf", "/etc/apache2/sites-enabled", :nfs => true, owner: "www-data", group: "www-data"
-    config.vm.synced_folder "../vagrant/scotch-box/sites", "/var/www/html", owner: "www-data", group: "www-data", :mount_options => ["dmode=755", "fmode=644"]
-    config.vm.synced_folder "../vagrant/scotch-box/conf", "/etc/apache2/sites-enabled", owner: "www-data", group: "www-data", :mount_options => ["dmode=755", "fmode=644"]
+    config.vm.synced_folder "./sites", "/var/www/html", owner: "www-data", group: "www-data", :mount_options => ["dmode=755", "fmode=644"]
+    config.vm.synced_folder "./conf", "/etc/apache2/sites-enabled", owner: "www-data", group: "www-data", :mount_options => ["dmode=755", "fmode=644"]
+    #config.vm.synced_folder "./sites", "/var/www/html", type: "rsync"
+    #config.vm.synced_folder "./conf", "/etc/apache2/sites-enabled", type: "rsync"
 end
